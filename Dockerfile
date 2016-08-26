@@ -1,7 +1,7 @@
 from ubuntu:latest
 MAINTAINER Marcel <lunactic@gmail.com>
 RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get upgrade -y
 RUN apt-get install wget unzip libXext libXt-devel libXmu -y
 RUN mkdir /mcr-install && cd /mcr-install &&  \
     wget -nv http://www.mathworks.com/supportfiles/downloads/R2014b/deployment_files/R2014b/installers/glnxa64/MCR_R2014b_glnxa64_installer.zip && \
