@@ -8,6 +8,7 @@ RUN mkdir /mcr-install && cd /mcr-install &&  \
     unzip MCR_R2014b_glnxa64_installer.zip && \
     ./install -mode silent -agreeToLicense yes
 RUN rm -Rf /mcr-install
+RUN cp /usr/lib/x86_64-linux-gnu/libstdc++.so.6 /usr/local/MATLAB/MATLAB_Compiler_Runtime/v84/sys/os/glnxa64/libstdc++.so.6
 ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v84/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v84/bin/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v84/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v84/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v84/sys/java/jre/glnxa64/jre/lib/amd64/server:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v84/sys/java/jre/glnxa64/jre/lib/amd64
 ENV XAPPLRESDIR=/usr/local/MATLAB/MATLAB_Compiler_Runtime/v84/X11/app-defaults
 ENV MCR_CACHE_VERBOSE=true
